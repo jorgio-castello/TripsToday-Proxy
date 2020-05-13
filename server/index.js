@@ -29,5 +29,12 @@ app.get('/trip/bookings/price/:id/:date/:adults', (req, res) => {
   .catch(err => console.log(err));
 });
 
+app.get('/trip/itinerary', (req, res) => {
+  fetch('http://127.0.0.1:3000/tour')
+  .then(response => response.json())
+  .then(data => res.send(data))
+  .catch(err => console.log(err));
+});
+
 
 app.listen(2400, () => console.log('Proxy Server Listening to Requests on Port 2400...'));
