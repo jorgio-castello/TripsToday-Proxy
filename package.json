@@ -18,7 +18,8 @@
   "homepage": "https://github.com/jorgio-castello/tripadvisor-gallery-proxy#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
