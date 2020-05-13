@@ -4,7 +4,8 @@
   "description": "TripAdvisor Gallery Proxy",
   "main": "index.js",
   "scripts": {
-    "start": "node ../gallery/server/index.js & node server/index.js & node ../bookings/server/index.js & node ../itinerary/src/server/index.js & node ../reviews/server"
+    "start": "node ../gallery/server/index.js & node server/index.js & node ../bookings/server/index.js & node ../itinerary/src/server/index.js & node ../reviews/server",
+    "client-dev": "live-server open=client"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^2.5.1"
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "live-server": "^1.2.1"
   }
 }
