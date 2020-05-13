@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node ../gallery/server/index.js & node server/index.js & node ../bookings/server/index.js & node ../itinerary/src/server/index.js & node ../reviews/server",
-    "client-dev": "live-server open=client"
+    "client-dev": "live-server open=client",
+    "start-gallery": "node ../gallery/server/index.js & node server/index.js"
   },
   "repository": {
     "type": "git",
