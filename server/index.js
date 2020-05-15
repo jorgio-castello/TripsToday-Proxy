@@ -6,14 +6,14 @@ const fetch = require('node-fetch');
 app.use(express.static('client'));
 app.use(cors());
 
-app.get('/trip/gallery/:id', (req, res) => {
-  fetch(`http://127.0.0.1:9999/tripAdvisor/${req.params.id}/gallery`)
+app.get('/tripAdvisor/:id/gallery', (req, res) => {
+  fetch(`http://0.0.0.0/tripAdvisor/${req.params.id}/gallery`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
 });
 
-app.get('/trip/bookings/data/:id', (req, res) => {
+app.get('/api/trip/:id/price', (req, res) => {
   const { id } = req.params;
   fetch(`http://127.0.0.1:3001/api/trip/${id}/price`)
   .then(response => response.json())
@@ -21,15 +21,17 @@ app.get('/trip/bookings/data/:id', (req, res) => {
   .catch(err => console.log(err));
 });
 
-app.get('/trip/bookings/price/:id/:date/:adults', (req, res) => {
-  const { id, date, adults } = req.params;
-  fetch(`http://127.0.0.1:3001/api/trip/${id}/calendar/?startdate=${date}&enddate=${date}&adults=${adults}`)
+app.get('/api/trip/:id/calendar/?', (req, res) => {
+  const { id } = req.params;
+  const { startdate, adults } = req.query;
+
+  fetch(`http://127.0.0.1:3001/api/trip/${id}/calendar/?startdate=${startdate}&enddate=${startdate}&adults=${adults}`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
 });
 
-app.get('/trip/itinerary', (req, res) => {
+app.get('/tour', (req, res) => {
   fetch('http://127.0.0.1:3000/tour')
   .then(response => response.json())
   .then(data => res.send(data))
