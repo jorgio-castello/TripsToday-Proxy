@@ -7,7 +7,7 @@ app.use(express.static('client'));
 app.use(cors());
 
 app.get('/tripAdvisor/:id/gallery', (req, res) => {
-  fetch(`http://0.0.0.0/tripAdvisor/${req.params.id}/gallery`)
+  fetch(`http://13.52.101.132/tripAdvisor/${req.params.id}/gallery`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
