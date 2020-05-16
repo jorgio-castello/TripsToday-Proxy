@@ -15,15 +15,20 @@
   justify-content: center;
 }
 
-.galleryContainer {
-  margin-right: 2.5em;
-}
-
 #travelerbooking {
   position: relative;
-  left: -250px;
-  top: -27px;
+  top: -2.5px;
+  left: -10px;
   z-index: 1;
+  width: 5%;
+}
+
+#bookingContainer {
+  position: relative;
+}
+
+.galleryContainer {
+  margin-right: 2em;
 }
 
 .websiteHeader {
@@ -39,11 +44,15 @@
 .itineraryContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .itineraryHeaderPhoto {
-  width: 64.5%;
+  min-width: 64.5%;
   margin: 0 auto;
+  min-height: 5vh;
 }
 
 .itineraryContentContainer {

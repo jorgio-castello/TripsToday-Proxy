@@ -4,6 +4,7 @@ const cors = require('cors');
 const fetch = require('node-fetch');
 
 app.use(express.static('client'));
+app.use('/image', express.static('client/image'));
 app.use(cors());
 
 app.get('/tripAdvisor/:id/gallery', (req, res) => {
