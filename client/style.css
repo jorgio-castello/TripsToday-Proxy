@@ -6,8 +6,24 @@
 }
 
 .galleryAndBookingContainer {
-  display: inline-flex;
+  display: flex;
+  max-width: 70%;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: start;
   margin: 2% auto;
+  justify-content: center;
+}
+
+.galleryContainer {
+  margin-right: 2.5em;
+}
+
+#travelerbooking {
+  position: relative;
+  left: -250px;
+  top: -27px;
+  z-index: 1;
 }
 
 .websiteHeader {

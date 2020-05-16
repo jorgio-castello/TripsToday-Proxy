@@ -15,7 +15,7 @@ app.get('/tripAdvisor/:id/gallery', (req, res) => {
 
 app.get('/api/trip/:id/price', (req, res) => {
   const { id } = req.params;
-  fetch(`http://127.0.0.1:3001/api/trip/${id}/price`)
+  fetch(`http://3.23.167.116/api/trip/${id}/price`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
@@ -25,14 +25,14 @@ app.get('/api/trip/:id/calendar/?', (req, res) => {
   const { id } = req.params;
   const { startdate, adults } = req.query;
 
-  fetch(`http://127.0.0.1:3001/api/trip/${id}/calendar/?startdate=${startdate}&enddate=${startdate}&adults=${adults}`)
+  fetch(`http://3.23.167.116/api/trip/${id}/calendar/?startdate=${startdate}&enddate=${startdate}&adults=${adults}`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
 });
 
 app.get('/tour', (req, res) => {
-  fetch('http://127.0.0.1:3000/tour')
+  fetch('http://54.190.52.239/tour')
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
