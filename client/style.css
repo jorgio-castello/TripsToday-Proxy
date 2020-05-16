@@ -36,8 +36,8 @@
 }
 
 .websiteHeaderPhoto {
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 45vh;
   object-fit: cover;
 }
 
