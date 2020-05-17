@@ -1,8 +1,12 @@
 const express = require('express');
+const compression = require('compression');
+const cache = require('express-cache-controller');
 const app = express();
 const cors = require('cors');
 const fetch = require('node-fetch');
 
+app.use(cache({maxAge: 31536000}));
+app.use(compression());
 app.use(express.static('client'));
 app.use('/image', express.static('client/image'));
 app.use(cors());
