@@ -6,6 +6,7 @@ const cors = require('cors');
 const fetch = require('node-fetch');
 
 app.use(cache({maxAge: 31536000}));
+app.use(express.json());
 app.use(compression());
 app.use(express.static('client'));
 app.use(cors());
@@ -42,11 +43,21 @@ app.get('/tour', (req, res) => {
   .catch(err => console.log(err));
 });
 
-app.get('/trip/reviews', (req, res) => {
-  fetch('http://127.0.0.1:4000/reviews')
+app.get('/reviews', (req, res) => {
+  fetch('http://3.12.90.50:3000/reviews')
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
+});
+
+app.put('/reviews', ({body: { _id }}, res) => { // nested destructuring
+  fetch('http://3.12.90.50:3000/reviews', {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ _id })
+  })
+  .then(res => res.json())
+  .then(data => res.send(data));
 });
 
 app.listen(2400, () => console.log('Proxy Server Listening to Requests on Port 2400...'));
