@@ -12,7 +12,7 @@ app.use(express.static('client'));
 app.use(cors());
 
 app.get('/tripAdvisor/:id/gallery', (req, res) => {
-  fetch(`http://13.52.101.132/tripAdvisor/${req.params.id}/gallery`)
+  fetch(`http://54.215.51.250/tripAdvisor/${req.params.id}/gallery`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
@@ -20,7 +20,7 @@ app.get('/tripAdvisor/:id/gallery', (req, res) => {
 
 app.get('/api/trip/:id/price', (req, res) => {
   const { id } = req.params;
-  fetch(`http://3.23.167.116/api/trip/${id}/price`)
+  fetch(`http://3.12.241.47/api/trip/${id}/price`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
@@ -30,28 +30,28 @@ app.get('/api/trip/:id/calendar/?', (req, res) => {
   const { id } = req.params;
   const { startdate, adults } = req.query;
 
-  fetch(`http://3.23.167.116/api/trip/${id}/calendar/?startdate=${startdate}&enddate=${startdate}&adults=${adults}`)
+  fetch(`http://3.12.241.47/api/trip/${id}/calendar/?startdate=${startdate}&enddate=${startdate}&adults=${adults}`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
 });
 
 app.get('/tour', (req, res) => {
-  fetch('http://54.190.52.239/tour')
+  fetch('http://34.222.61.220/tour')
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
 });
 
 app.get('/reviews', (req, res) => {
-  fetch('http://3.12.90.50:3000/reviews')
+  fetch('http://18.217.110.214:3004/reviews')
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
 });
 
 app.put('/reviews', ({body: { _id }}, res) => { // nested destructuring
-  fetch('http://3.12.90.50:3000/reviews', {
+  fetch('http://18.217.110.214:3004/reviews', {
     method: 'PUT',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ _id })
