@@ -5,10 +5,11 @@ const app = express();
 const cors = require('cors');
 const fetch = require('node-fetch');
 
-app.use(cache({maxAge: 31536000}));
-app.use(express.json());
-app.use(compression());
+// app.use(cache({maxAge: 31536000}));
+// app.use(express.json());
+// app.use(compression());
 app.use(express.static('client'));
+app.use(express.json());
 app.use(cors());
 
 app.get('/tripAdvisor/:id/gallery', (req, res) => {
