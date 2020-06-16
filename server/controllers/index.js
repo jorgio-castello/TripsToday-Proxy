@@ -32,7 +32,26 @@ const getTour = (req, res) => {
   .catch(err => console.log(err));
 }
 
+const getReviews = (req, res) => {
+  fetch('http://3.12.90.50:3000/reviews')
+  .then(response => response.json())
+  .then(data => res.send(data))
+  .catch(err => console.log(err));
+}
+
+const updateReview = ({body: { _id }}, res) => { // nested destructuring
+  fetch('http://3.12.90.50:3000/reviews', {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ _id })
+  })
+  .then(res => res.json())
+  .then(data => res.send(data));
+};
+
 module.exports.getGallery = getGallery;
 module.exports.getPrice = getPrice;
 module.exports.getCalendar = getCalendar;
 module.exports.getTour = getTour;
+module.exports.getReviews = getReviews;
+module.exports.updateReview = updateReview;
