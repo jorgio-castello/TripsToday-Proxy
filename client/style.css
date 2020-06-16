@@ -1,13 +1,32 @@
 .container {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .galleryAndBookingContainer {
-  display: inline-flex;
+  display: flex;
+  max-width: 70%;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: start;
   margin: 2% auto;
+  justify-content: center;
+}
+
+#travelerbooking {
+  position: relative;
+  top: -2.5px;
+  left: -10px;
+  z-index: 1;
+  width: 5%;
+}
+
+#bookingContainer {
+  position: relative;
+}
+
+.galleryContainer {
+  margin-right: 2em;
 }
 
 .websiteHeader {
@@ -15,19 +34,23 @@
 }
 
 .websiteHeaderPhoto {
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 45vh;
   object-fit: cover;
 }
 
 .itineraryContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .itineraryHeaderPhoto {
-  width: 64.5%;
+  min-width: 64.5%;
   margin: 0 auto;
+  min-height: 5vh;
 }
 
 .itineraryContentContainer {
@@ -40,4 +63,9 @@
   height: 637px;
   object-fit: cover;
   margin-top: 0.8%;
+}
+
+.reviewsContainer {
+  max-width:800px !important;
+  margin: auto 10%;
 }
