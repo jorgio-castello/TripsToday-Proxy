@@ -1,7 +1,13 @@
 const fetch = require('node-fetch');
+const { galleryURL, galleryPort,
+        bookingURL, bookingPort,
+        itineraryURL, itineraryPort,
+        reviewsURL, reviewsPort }
+= require('./ServiceURLS');
+
 
 const getGallery = (req, res) => {
-  fetch(`http://localhost:9999/tripAdvisor/${req.params.id}/gallery`)
+  fetch(`${galleryURL}:${galleryPort}/tripAdvisor/${req.params.id}/gallery`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
@@ -9,7 +15,7 @@ const getGallery = (req, res) => {
 
 const getPrice = (req, res) => {
   const { id } = req.params;
-  fetch(`http://localhost:3001/api/trip/${id}/price`)
+  fetch(`${bookingURL}:${bookingPort}/api/trip/${id}/price`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
@@ -19,28 +25,28 @@ const getCalendar = (req, res) => {
   const { id } = req.params;
   const { startdate, adults } = req.query;
 
-  fetch(`http://localhost:3001/api/trip/${id}/calendar/?startdate=${startdate}&enddate=${startdate}&adults=${adults}`)
+  fetch(`${bookingURL}:${bookingPort}/api/trip/${id}/calendar/?startdate=${startdate}&enddate=${startdate}&adults=${adults}`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
 };
 
 const getTour = (req, res) => {
-  fetch('http://localhost:3000/tour')
+  fetch(`${itineraryURL}:${itineraryPort}/tour`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
 }
 
 const getReviews = (req, res) => {
-  fetch('http://3.12.90.50:3000/reviews')
+  fetch(`${reviewsURL}:${reviewsPort}/reviews`)
   .then(response => response.json())
   .then(data => res.send(data))
   .catch(err => console.log(err));
 }
 
 const updateReview = ({body: { _id }}, res) => { // nested destructuring
-  fetch('http://3.12.90.50:3000/reviews', {
+  fetch(`${reviewsURL}:${reviewsPort}/reviews`, {
     method: 'PUT',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ _id })
