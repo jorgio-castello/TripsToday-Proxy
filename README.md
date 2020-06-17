@@ -19,7 +19,7 @@ Source: - https://github.com/NoStepOnSnake/tripadvisor-itenerary-server
 ## Getting Started
 > Please clone the repos in the related projects section below and follow their respective Getting Started details. 
 
-After the individual services' are running, start this proxy serve with the following:
+After the individual services' are running, start the proxy server with the following:
 
 Install dependencies:
 ``` 
