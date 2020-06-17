@@ -2,17 +2,17 @@
 > Full-stack travel web application offering a selection of local-day-trip activities
 
 ## Gallery Module
-> Source: https://github.com/jorgio-castello/TripsToday
+Source: https://github.com/jorgio-castello/TripsToday
 <br></br>
 ![Gallery / Review Modal](https://media.giphy.com/media/kyRGggoT7cFvrqRTaC/giphy.gif)
 
 ## Booking Module
-> Source: https://github.com/tinaxing14/BookTour
+Source: https://github.com/tinaxing14/BookTour
 <br></br>
 ![Trip Bookings](https://media.giphy.com/media/d5SvDB5ApfBY9rAoim/giphy.gif)
 
 ## Itinerary Module
-> Source: - https://github.com/NoStepOnSnake/tripadvisor-itenerary-server
+Source: - https://github.com/NoStepOnSnake/tripadvisor-itenerary-server
 <br></br>
 ![Itinerary](https://media.giphy.com/media/giQD4BIGMxgG6ZRkqw/giphy.gif)
 
