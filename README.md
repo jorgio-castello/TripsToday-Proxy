@@ -17,7 +17,9 @@ Source: - https://github.com/NoStepOnSnake/tripadvisor-itenerary-server
 ![Itinerary](https://media.giphy.com/media/giQD4BIGMxgG6ZRkqw/giphy.gif)
 
 ## Getting Started
-Please clone the repos below and follow their respective Getting Started details. After the individual services' are running, start this proxy serve with the following:
+> Please clone the repos in the related projects section below and follow their respective Getting Started details. 
+
+After the individual services' are running, start this proxy serve with the following:
 
 Install dependencies:
 ``` 
